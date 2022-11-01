@@ -13,3 +13,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created base astrojs project.
 - Added tailwind integration.
+- Scaffolded index page for desktop size.
+- Added tailwind/line-clamp plugin.
