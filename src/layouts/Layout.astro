@@ -1,82 +1,96 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<!-- Nav Bar -->
-		<div class="max-w-4xl mx-auto my-4 flex justify-between items-center">
-			<h1 class="text-lg font-bold">Reach 4 Your Future</h1>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <div class="max-w-4xl mx-auto my-4 flex justify-between items-center">
+      <h1 class="text-lg font-bold">Reach 4 Your Future</h1>
 
-			<nav class="flex space-x-10">
-				<a href="#">About</a>
-				<a href="#">Projects</a>
-				<a href="#">Events</a>
-				<a href="#">Donate</a>
-			</nav>
-		</div>
+      <nav class="flex space-x-10 text-sm">
+        <a href="/about">About</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#events">Events</a>
+        <a href="/#donate">Donate</a>
+      </nav>
+    </div>
 
-		<main class="max-w-4xl mx-auto">
-			<slot />
-		</main>
+    <main class="max-w-4xl mx-auto">
+      <slot />
+    </main>
 
-		<footer class="bg-gray-100 mt-32">
-			<div class="max-w-4xl mx-auto py-12">
-				<div class="flex justify-between">
-					<!-- Details -->
-					<div>
-						<h2 class="text-lg">Reach 4 Your Future</h2>
-	
-						<nav class="grid mt-6 gap-3 text-sm">
-							<a href="#">About</a>
-							<a href="#">Projects</a>
-							<a href="#">Events</a>
-							<a href="#">Donate</a>
-							<a href="#">Contact</a>
-						</nav>
-					</div>
-	
-					<!-- ACNC sticker -->
-					<div>
-						<img src="/assets/acnc.png" alt="ACNC certified" class="h-24 w-auto">
-					</div>
-				</div>
-				<div class="flex justify-between items-end text-sm mt-12">
-					<p>
-						Level 1, 2-6 Glenferrie Road<br>
-						Malvern, Victoria, Australia, VIC 3144
-					</p>
-					<p>&copy; Copyright 2022 by R4YFF</p>
-					<p>All Right Reserved with Stem for Social Action</p>
-				</div>
-			</div>
-		</footer>
-		<!-- Footer -->
-	</body>
+    <footer class="bg-gray-100 mt-32">
+      <div class="max-w-4xl mx-auto py-12">
+        <div class="flex justify-between">
+          <!-- Details -->
+          <div>
+            <h2 class="text-lg">Reach 4 Your Future</h2>
+
+            <nav class="grid mt-6 gap-3 text-sm">
+              <a href="#">About</a>
+              <a href="#">Projects</a>
+              <a href="#">Events</a>
+              <a href="#">Donate</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+
+          <!-- ACNC sticker -->
+          <div>
+            <img
+              src="/assets/acnc.png"
+              alt="ACNC certified"
+              class="h-24 w-auto"
+            />
+          </div>
+        </div>
+        <div class="flex justify-between items-end text-sm mt-12">
+          <p>
+            Level 1, 2-6 Glenferrie Road<br />
+            Malvern, Victoria, Australia, VIC 3144
+          </p>
+          <p>&copy; Copyright 2022 by R4YFF</p>
+          <p>All Right Reserved with Stem for Social Action</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+    <style is:global>
+      :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          #da62c4 30%,
+          white 60%
+        );
+      }
+
+      html,
+      body {
+        @apply text-gray-900;
+      }
+
+      h2 {
+        @apply text-3xl font-bold;
+      }
+
+      h3 {
+        @apply text-2xl font-medium;
+      }
+    </style>
+  </body>
 </html>
-
-<style is:global>
-	html, body {
-		@apply text-gray-900;
-	}
-
-	h2 {
-		@apply text-3xl font-bold;
-	}
-
-	h3 {
-		@apply text-2xl font-medium;
-	}
-</style>
