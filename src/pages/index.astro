@@ -1,204 +1,25 @@
 ---
+import Articles from "../components/Articles.astro";
+import DonateCTA from "../components/DonateCTA.astro";
+import Hero from "../components/Hero.astro";
+import Partners from "../components/Partners.astro";
+import Projects from "../components/Projects.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <!-- Hero -->
-  <section class="h-[32em] grid items-center relative">
-    <!-- TODO -->
-    <!-- Background video -->
-    <!-- <video class="absolute z-10 max-w-4xl mx-auto top-0 bottom-0 right-0 left-0 object-cover h-full w-full shadow-inner-xl" src="https://josecuono.dev/video1.mp4" type="video/mp4" autoplay muted loop></video> -->
-
-    <div class="grid grid-cols-2 relative z-20">
-      <div class="my-auto link-card">
-        <h2
-          class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-teal-400 via-purple-500 to-blue-500 animate-text"
-        >
-          Empowering children<br />
-          with creative, engaging,<br />
-          and innovative visions.
-        </h2>
-      </div>
-      <div class="my-auto space-y-6 text-sm flex flex-col max-w-sm">
-        <p>
-          We engage with grassroots communities by empowering children with
-          social and educational values.
-        </p>
-        <p>
-          Our Social Action Programs encourages children from all backgrounds to
-          engage, collaborate and participate in making the world around them a
-          better place.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Impact.</h2>
-
-    <!-- TODO Add react carousel (react-slider?) -->
-    <div class="grid grid-cols-3 gap-8 mt-12">
-      <!-- Project -->
-      <a href="#">
-        <img
-          src="/assets/projects/damaged-bridge.jpeg"
-          alt="Tent Classroom"
-          class="h-56 object-cover rounded-lg"
-        />
-        <h3 class="text-base font-medium mt-6">
-          Reinstatement of Pedestrian Suspension Bridge
-        </h3>
-      </a>
-      <a href="#">
-        <img
-          src="/assets/projects/tent-classroom.webp"
-          alt="Tent Classroom"
-          class="h-56 object-cover rounded-lg"
-        />
-        <h3 class="text-base font-medium mt-6">
-          Reinstatement of Kade Village School
-        </h3>
-      </a>
-      <a href="#">
-        <img
-          src="/assets/projects/tent-classroom.webp"
-          alt="Tent Classroom"
-          class="h-56 object-cover rounded-lg"
-        />
-        <h3 class="text-base font-medium mt-6">
-          Special School in Lautoka Fiji
-        </h3>
-      </a>
-    </div>
-  </section>
-
-  <!-- Partners -->
-  <section id="partners" class="mt-32 flex">
-    <div class="flex-shrink">
-      <h2>
-        We&apos;re partnered with <br />
-        innovators.
-      </h2>
-
-      <div class="flex gap-6 items-center mt-6">
-        <p class="text-lg font-medium">Want to help?</p>
-        <a href="#" class="px-6 py-3 rounded border">Donate Now</a>
-      </div>
-    </div>
-    <div class="flex-grow flex gap-8 justify-end">
-      <img class="h-14" src="/assets/partners/microsoft.jpg" alt="Microsoft" />
-      <img class="h-14" src="/assets/partners/hp.jpg" alt="HP" />
-      <img class="h-14" src="/assets/partners/intel.jpg" alt="Intel" />
-      <img class="h-14" src="/assets/partners/rmit.jpg" alt="RMIT" />
-    </div>
-  </section>
-
-  <!-- TODO: Events -->
-
-  <!-- Articles -->
-  <section id="articles" class="mt-32 grid grid-cols-3 gap-y-12 gap-x-6">
-    <!-- Latest -->
-    <div class="col-span-3 grid gap-6 grid-cols-5">
-      <div class="col-span-2 bg-gray-400 rounded-lg"></div>
-      <div class="col-span-3 flex flex-col">
-        <p class="text-sm font-medium">October 30, 2022</p>
-        <h3 class="max-w-xs mt-2">
-          Reinstatement of Pedestrian Suspension Bridge
-        </h3>
-        <p class="max-w-sm text-sm mt-4">
-          Suspendisse a facilisis diam. Vestibulum nec molestie ipsum. Proin
-          ante mi, iaculis non lacus ut, semper hendrerit turpis. Integer
-          molestie tellus sit amet diam fermentum, quis ultrices augue
-          tincidunt. Quisque nec massa at tellus consequat ornare. Sed
-          sollicitudin et ex vitae venenatis. Pellentesque varius nunc nisl,
-          quis hendrerit turpis tincidunt in.
-        </p>
-        <div class="flex gap-4 mt-6">
-          <img
-            src="/assets/headshot.png"
-            alt="Dan Ferguson"
-            class="h-10 w-10 rounded-full object-cover"
-          />
-          <div class="flex flex-col gap-0.5 justify-center">
-            <p class="font-medium text-sm">Dan Ferguson</p>
-            <p class="text-xs">Project Officer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Other -->
-    <div class="flex flex-col gap-3">
-      <div class="col-span-2 h-48 bg-gray-400 rounded-lg"></div>
-      <p class="text-xs font-bold">October 30, 2022</p>
-      <h3 class="text-lg">Reinstatement of Pedestrian Suspension Bridge</h3>
-      <p class="max-w-sm text-sm line-clamp-5">
-        Suspendisse a facilisis diam. Vestibulum nec molestie ipsum. Proin ante
-        mi, iaculis non lacus ut, semper hendrerit turpis. Integer molestie
-        tellus sit amet diam fermentum, quis ultrices augue tincidunt. Quisque
-        nec massa at tellus consequat ornare. Sed sollicitudin et ex vitae
-        venenatis. Pellentesque varius nunc nisl, quis hendrerit turpis
-        tincidunt in.
-      </p>
-      <div class="flex gap-3 items-center">
-        <img
-          src="/assets/headshot.png"
-          alt="Dan Ferguson"
-          class="h-6 w-6 rounded-full object-cover"
-        />
-        <p class="text-xs">Dan Ferguson</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-3">
-      <div class="col-span-2 h-48 bg-gray-400 rounded-lg"></div>
-      <p class="text-xs font-bold">October 30, 2022</p>
-      <h3 class="text-lg">Reinstatement of Pedestrian Suspension Bridge</h3>
-      <p class="max-w-sm text-sm line-clamp-5">
-        Suspendisse a facilisis diam. Vestibulum nec molestie ipsum. Proin ante
-        mi, iaculis non lacus ut, semper hendrerit turpis. Integer molestie
-        tellus sit amet diam fermentum, quis ultrices augue tincidunt. Quisque
-        nec massa at tellus consequat ornare. Sed sollicitudin et ex vitae
-        venenatis. Pellentesque varius nunc nisl, quis hendrerit turpis
-        tincidunt in.
-      </p>
-      <div class="flex gap-3 items-center">
-        <img
-          src="/assets/headshot.png"
-          alt="Dan Ferguson"
-          class="h-6 w-6 rounded-full object-cover"
-        />
-        <p class="text-xs">Dan Ferguson</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-3">
-      <div class="col-span-2 h-48 bg-gray-400 rounded-lg"></div>
-      <p class="text-xs font-bold">October 30, 2022</p>
-      <h3 class="text-lg">Reinstatement of Pedestrian Suspension Bridge</h3>
-      <p class="max-w-sm text-sm line-clamp-5">
-        Suspendisse a facilisis diam. Vestibulum nec molestie ipsum. Proin ante
-        mi, iaculis non lacus ut, semper hendrerit turpis. Integer molestie
-        tellus sit amet diam fermentum, quis ultrices augue tincidunt. Quisque
-        nec massa at tellus consequat ornare. Sed sollicitudin et ex vitae
-        venenatis. Pellentesque varius nunc nisl, quis hendrerit turpis
-        tincidunt in.
-      </p>
-      <div class="flex gap-3 items-center">
-        <img
-          src="/assets/headshot.png"
-          alt="Dan Ferguson"
-          class="h-6 w-6 rounded-full object-cover"
-        />
-        <p class="text-xs">Dan Ferguson</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Donate CTA -->
-  <section id="donate" class="flex flex-col gap-6 items-center mt-32">
-    <h2>Help us make an impact today.</h2>
-    <a href="#" class="px-6 py-3 rounded border">Donate</a>
-  </section>
+<Layout
+  title="Reach For Your Future Foundation"
+  description="Empowering children with innovative visions."
+>
+  <Hero
+    title="Empowering children with"
+    titleHighlight="innovative visions."
+    description="Our Social Action Programs encourages children to participate in making the world around them a better place."
+    grayBackground={true}
+  />
+  <Partners />
+  <Projects />
+  <DonateCTA />
+  <Articles />
+  <DonateCTA />
 </Layout>

@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "@danielferguson/r4yff",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -11,11 +11,21 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.1.1",
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "astro": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2"
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.7"
   }
 }

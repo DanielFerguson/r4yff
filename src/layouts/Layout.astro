@@ -1,9 +1,13 @@
 ---
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar";
+
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,83 +18,32 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={`${Astro.url.pathname}/assets/background.jpg`}
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={`${Astro.url.pathname}/assets/background.jpg`}
+    />
   </head>
   <body>
-    <!-- Nav Bar -->
-    <div class="max-w-4xl mx-auto my-4 flex justify-between items-center">
-      <h1 class="text-lg font-bold">Reach 4 Your Future</h1>
-
-      <nav class="flex space-x-10 text-sm">
-        <a href="/about">About</a>
-        <a href="/#projects">Projects</a>
-        <a href="/#events">Events</a>
-        <a href="/#donate">Donate</a>
-      </nav>
-    </div>
-
-    <main class="max-w-4xl mx-auto">
-      <slot />
-    </main>
-
-    <footer class="bg-gray-100 mt-32">
-      <div class="max-w-4xl mx-auto py-12">
-        <div class="flex justify-between">
-          <!-- Details -->
-          <div>
-            <h2 class="text-lg">Reach 4 Your Future</h2>
-
-            <nav class="grid mt-6 gap-3 text-sm">
-              <a href="#">About</a>
-              <a href="#">Projects</a>
-              <a href="#">Events</a>
-              <a href="#">Donate</a>
-              <a href="#">Contact</a>
-            </nav>
-          </div>
-
-          <!-- ACNC sticker -->
-          <div>
-            <img
-              src="/assets/acnc.png"
-              alt="ACNC certified"
-              class="h-24 w-auto"
-            />
-          </div>
-        </div>
-        <div class="flex justify-between items-end text-sm mt-12">
-          <p>
-            Level 1, 2-6 Glenferrie Road<br />
-            Malvern, Victoria, Australia, VIC 3144
-          </p>
-          <p>&copy; Copyright 2022 by R4YFF</p>
-          <p>All Right Reserved with Stem for Social Action</p>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer -->
-    <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-          45deg,
-          rgb(var(--accent)),
-          #da62c4 30%,
-          white 60%
-        );
-      }
-
-      html,
-      body {
-        @apply text-gray-900;
-      }
-
-      h2 {
-        @apply text-3xl font-bold;
-      }
-
-      h3 {
-        @apply text-2xl font-medium;
-      }
-    </style>
+    <NavBar client:idle />
+    <slot />
+    <Footer />
   </body>
 </html>
